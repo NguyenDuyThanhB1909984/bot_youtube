@@ -74,16 +74,14 @@ def run_thread(keyword):
         watch_video = driver.find_element(By.XPATH, '//a[@id="video-title" and contains(text(), "{}")]'.format(keyword))
         watch_video.click()
         time.sleep(10)
-        driver.save_screenshot("screenshot_{}.png".format(keyword))
-        print("Screenshot taken for keyword: {}".format(keyword))
 
-        # while True:
-        #     # Chụp ảnh màn hình
-        #     driver.save_screenshot("screenshot_{}.png".format(keyword))
-        #     print("Screenshot taken for keyword: {}".format(keyword))
+        while True:
+            # Chụp ảnh màn hình
+            driver.save_screenshot("screenshot_{}_{}.png".format(keyword, time.time()))
+            print("Screenshot taken for keyword: {}".format(keyword))
 
-        #     # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
-        #     time.sleep(600)
+            # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
+            time.sleep(100)
 
         #Đóng trình duyệt khi kết thúc
         driver.quit()
@@ -96,20 +94,17 @@ def run_thread(keyword):
         watch_video.click()
         time.sleep(10)
 
-        driver.save_screenshot("screenshot_{}.png".format(keyword))
-        print("Screenshot taken for keyword: {}".format(keyword))
+        while True:
+            # Chụp ảnh màn hình
+            driver.save_screenshot("screenshot_{}_{}.png".format(keyword, time.time()))
+            print("Screenshot taken for keyword: {}".format(keyword))
 
-        # while True:
-        #     # Chụp ảnh màn hình
-        #     driver.save_screenshot("screenshot_{}.png".format(keyword))
-        #     print("Screenshot taken for keyword: {}".format(keyword))
-
-        #     # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
-        #     time.sleep(600)
+            # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
+            time.sleep(100)
 
         # Đóng trình duyệt khi kết thúc
         driver.quit()
-elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman']
+elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
 # Số lượng luồng bạn muốn chạy
 n_threads = len(elements)
 
