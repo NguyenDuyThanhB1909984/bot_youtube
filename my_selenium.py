@@ -105,6 +105,7 @@ def run_thread(keyword):
         # Đóng trình duyệt khi kết thúc
         driver.quit()
 elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
+elements = elements + elements + elements + elements + elements + elements + elements + elements + elements
 # Số lượng luồng bạn muốn chạy
 n_threads = len(elements)
 
