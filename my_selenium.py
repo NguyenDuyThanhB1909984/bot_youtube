@@ -116,7 +116,7 @@ n_threads = len(elements)
 # Tạo và khởi chạy các luồng
 threads = []
 for element in elements:
-    thread = threading.Thread(target=run_thread, args=(element.text,))
+    thread = threading.Thread(target=run_thread, args=(element,))
     thread.start()
     threads.append(thread)
 
