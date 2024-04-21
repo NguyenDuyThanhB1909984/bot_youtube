@@ -36,7 +36,7 @@ try:
     # Tìm tất cả các phần tử có id là "video-title"
     elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
     driver.quit()
-    time.sleep(10)
+    time.sleep(30)
 
 except :
 
@@ -45,7 +45,7 @@ except :
     # Tìm tất cả các phần tử có id là "video-title"
     elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
     driver.quit()
-    time.sleep(10)
+    time.sleep(30)
 
 # Hàm thực thi cho mỗi luồng
 def run_thread(keyword):
