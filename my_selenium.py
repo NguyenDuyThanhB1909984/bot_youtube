@@ -5,9 +5,8 @@ import time
 import threading
 
 
-driver = webdriver.Chrome()
-
 try: 
+    driver = webdriver.Chrome()
     driver.get("https://www.youtube.com/")
 
     # Tìm ô tìm kiếm
@@ -39,7 +38,7 @@ try:
     time.sleep(30)
 
 except :
-
+    driver = webdriver.Chrome()
     driver.get("https://www.youtube.com/@Boymuscleworkout/playlists")
     time.sleep(10)
     # Tìm tất cả các phần tử có id là "video-title"
