@@ -81,7 +81,7 @@ def run_thread(keyword):
             print("Screenshot taken for keyword: {}".format(keyword))
 
             # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
-            time.sleep(100)
+            time.sleep(300)
 
         #Đóng trình duyệt khi kết thúc
         driver.quit()
@@ -100,7 +100,7 @@ def run_thread(keyword):
             print("Screenshot taken for keyword: {}".format(keyword))
 
             # Chờ 10 phút trước khi chụp ảnh màn hình tiếp theo
-            time.sleep(100)
+            time.sleep(300)
 
         # Đóng trình duyệt khi kết thúc
         driver.quit()
