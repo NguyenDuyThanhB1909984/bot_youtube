@@ -5,46 +5,46 @@ import time
 import threading
 
 
-try: 
-    driver = webdriver.Chrome()
-    driver.get("https://www.youtube.com/")
+# try: 
+#     driver = webdriver.Chrome()
+#     driver.get("https://www.youtube.com/")
 
-    # Tìm ô tìm kiếm
-    search_box = driver.find_element(By.XPATH, '//input[@id="search"]')
+#     # Tìm ô tìm kiếm
+#     search_box = driver.find_element(By.XPATH, '//input[@id="search"]')
 
-    # Gõ từ khóa vào ô tìm kiếm
-    search_box.send_keys("@Boymuscleworkout")
+#     # Gõ từ khóa vào ô tìm kiếm
+#     search_box.send_keys("@Boymuscleworkout")
 
-    # Nhấn Enter để tìm kiếm
-    search_box.send_keys(Keys.RETURN)
-    time.sleep(5)
+#     # Nhấn Enter để tìm kiếm
+#     search_box.send_keys(Keys.RETURN)
+#     time.sleep(5)
 
-    # Tìm và nhấp vào liên kết của kênh
-    video_link = driver.find_element(By.XPATH, '//*[@id="subscribers" and contains(text(), "@Boymuscleworkout")]')
-    video_link.click()
-    time.sleep(5)
+#     # Tìm và nhấp vào liên kết của kênh
+#     video_link = driver.find_element(By.XPATH, '//*[@id="subscribers" and contains(text(), "@Boymuscleworkout")]')
+#     video_link.click()
+#     time.sleep(5)
 
-    # Chuyển sang tab mới
-    driver.switch_to.window(driver.window_handles[-1])
+#     # Chuyển sang tab mới
+#     driver.switch_to.window(driver.window_handles[-1])
 
-    # Tìm và nhấp vào tab "Playlists"
-    playlists = driver.find_element(By.XPATH, '//yt-tab-shape[@tab-title="Playlists"]')
-    playlists.click()
-    time.sleep(5)
+#     # Tìm và nhấp vào tab "Playlists"
+#     playlists = driver.find_element(By.XPATH, '//yt-tab-shape[@tab-title="Playlists"]')
+#     playlists.click()
+#     time.sleep(5)
 
-    # Tìm tất cả các phần tử có id là "video-title"
-    elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
-    driver.quit()
-    time.sleep(30)
+#     # Tìm tất cả các phần tử có id là "video-title"
+#     elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
+#     driver.quit()
+#     time.sleep(30)
 
-except :
-    driver = webdriver.Chrome()
-    driver.get("https://www.youtube.com/@Boymuscleworkout/playlists")
-    time.sleep(10)
-    # Tìm tất cả các phần tử có id là "video-title"
-    elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
-    driver.quit()
-    time.sleep(30)
+# except :
+#     driver = webdriver.Chrome()
+#     driver.get("https://www.youtube.com/@Boymuscleworkout/playlists")
+#     time.sleep(10)
+#     # Tìm tất cả các phần tử có id là "video-title"
+#     elements = driver.find_elements(By.XPATH,'//a[@id="video-title"]')
+#     driver.quit()
+#     time.sleep(30)
 
 # Hàm thực thi cho mỗi luồng
 def run_thread(keyword):
@@ -109,7 +109,7 @@ def run_thread(keyword):
 
         # Đóng trình duyệt khi kết thúc
         driver.quit()
-
+elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman']
 # Số lượng luồng bạn muốn chạy
 n_threads = len(elements)
 
