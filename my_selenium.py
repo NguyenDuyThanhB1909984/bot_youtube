@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
 import threading
-
+import multiprocessing
 
 # try: 
 #     driver = webdriver.Chrome()
@@ -104,20 +104,41 @@ def run_thread(keyword):
 
         # Đóng trình duyệt khi kết thúc
         driver.quit()
-elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
-elements = elements + elements
-# Số lượng luồng bạn muốn chạy
-n_threads = len(elements)
+# elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
+# elements = elements + elements
+# # Số lượng luồng bạn muốn chạy
+# n_threads = len(elements)
 
-# Tạo và khởi chạy các luồng
-threads = []
-for element in elements:
-    thread = threading.Thread(target=run_thread, args=(element,))
-    thread.start()
-    threads.append(thread)
+def run_process(elements):
+    # Tạo và khởi chạy các luồng trong mỗi process
+    threads = []
+    for element in elements:
+        thread = threading.Thread(target=run_thread, args=(element,))
+        thread.start()
+        threads.append(thread)
 
-# Chờ tất cả các luồng hoàn thành
-for thread in threads:
-    thread.join()
+    # Chờ tất cả các luồng hoàn thành trong mỗi process
+    for thread in threads:
+        thread.join()
 
-print("Done!")
+
+if __name__ == "__main__":
+    # List các elements bạn muốn xử lý
+    elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
+    # elements = elements + elements
+
+    # Số lượng process muốn tạo, có thể sử dụng multiprocessing.cpu_count() để lấy số lượng core CPU
+    num_processes = multiprocessing.cpu_count() - 2
+
+    # Tạo và khởi chạy các process
+    processes = []
+    for i in range(num_processes):
+        process = multiprocessing.Process(target=run_process, args=(elements,))
+        process.start()
+        processes.append(process)
+
+    # Chờ tất cả các process hoàn thành
+    for process in processes:
+        process.join()
+
+    print("Done!")
