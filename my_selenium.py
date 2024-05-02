@@ -124,7 +124,7 @@ def run_process(elements):
 
 if __name__ == "__main__":
     # List các elements bạn muốn xử lý
-    elements = ['kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
+    elements = ['herst277','365ngynhem','kimnguyennanh', 'hmatuan9', 'rforrachman', 'mixed', 'tuangym98', 'huutinh103', 'bimostreetworkout', 'duongkimmochii', 'honguynvn04', 'buiquoc_sw', 'Hpp358965']
     # elements = elements + elements
 
     # Số lượng process muốn tạo, có thể sử dụng multiprocessing.cpu_count() để lấy số lượng core CPU
